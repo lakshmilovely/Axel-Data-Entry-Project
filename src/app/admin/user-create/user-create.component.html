@@ -1,0 +1,143 @@
+<body
+  style=
+    "background-image:
+    url('https://png.pngtree.com/thumb_back/fw800/background/20190221/ourmid/pngtree-technology-lines-business-blue-technology-image_22955.jpg' )">
+<h3 style="text-align:center;color:white">Welcome To Add Users</h3>
+<div class="container rounded bg-white mt-6" >
+
+  <div class="row" >
+      <div class="col-md-4 border-right">
+          <div class="d-flex flex-column align-items-center text-center p-3 py-5">
+            <img class="rounded-circle mt-5"  [src]="url" width="175" height="175">
+            <br>
+            <input type="file" style="display:none" (change)="selectFile($event)" #input >
+            <button type="button" (click)="input.click()" style="background-color:darkblue;color:white"> Upload</button>
+
+           </div>
+      </div>
+
+      <div class="col-md-8">
+          <div class="p-1 py-3">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                  <div class="d-flex flex-row align-items-center back" routerLink="/admin">
+                    <i class="fa fa-long-arrow-left mr-1 mb-1"></i>
+                      <h6>Back to home</h6>
+                  </div>
+                  <h6 class="text-right" routerLink="/edit-profile">Edit Profile</h6>
+              </div>
+              <form [formGroup]="Form" ngSubmit="SaveUser()">
+              <div class="row mt-2">
+                  <div class="col-md-6"><label>FirstName</label>
+                    <input type="text" class="form-control" placeholder="first name" value="" formControlName="fname" ngModel pattern="^[a-zA-Z ]+$">
+                    <div class="text-danger" *ngIf="Form.controls['fname'].invalid && (Form.controls['fname'].dirty || Form.controls['fname'].touched)">
+                      <div *ngIf="Form.controls['fname'].errors?.['required']">required</div>
+                      <div *ngIf="Form.controls['fname'].errors?.['pattern']">characters only</div>
+                     </div>
+                    </div>
+                  <div class="col-md-6"><label>LastName</label>
+                    <input type="text" class="form-control" value="" placeholder="lastname" formControlName="lname"  ngModel pattern="^[a-zA-Z ]+$">
+                    <div class="text-danger" *ngIf="Form.controls['lname'].invalid && (Form.controls['lname'].dirty || Form.controls['lname'].touched)">
+                      <div *ngIf="Form.controls['lname'].errors?.['required']">required</div>
+                      <div *ngIf="Form.controls['lname'].errors?.['pattern']">characters only</div>
+                     </div>
+                  </div>
+              </div>
+              <div class="row mt-3">
+                  <div class="col-md-6"><label>Email</label>
+                    <input type="text" class="form-control" placeholder="Email" value="" formControlName="email" >
+                    <div class="text-danger" *ngIf="Form.controls['email'].invalid && (Form.controls['email'].dirty || Form.controls['email'].touched)">
+                      <div *ngIf="Form.controls['email'].errors?.['required']">required</div>
+
+                     </div>
+                  </div>
+                  <div class="col-md-6">
+                    <label>Contact</label>
+                    <input type="text" class="form-control" value="" placeholder="Phone number" formControlName="phone">
+                    <div class="text-danger" *ngIf="Form.controls['phone'].invalid && (Form.controls['phone'].dirty || Form.controls['phone'].touched)">
+                      <div *ngIf="Form.controls['phone'].errors?.['required']">required</div>
+
+                     </div>
+
+                  </div>
+              </div>
+              <div class="row mt-3">
+                  <div class="col-md-6"><label>Address</label><input type="text" class="form-control" placeholder="address" value="" formControlName="address">
+                    <div class="text-danger" *ngIf="Form.controls['address'].invalid && (Form.controls['address'].dirty || Form.controls['address'].touched)">
+                      <div *ngIf="Form.controls['address'].errors?.['required']">required</div>
+
+                     </div>
+
+                  </div>
+                  <div class="col-md-6"><label>Map Address link</label><input type="text" class="form-control" value="" placeholder="Map address link" formControlName="mapAddressLink">
+                    <div class="text-danger" *ngIf="Form.controls['mapAddressLink'].invalid && (Form.controls['mapAddressLink'].dirty || Form.controls['mapAddressLink'].touched)">
+                      <div *ngIf="Form.controls['mapAddressLink'].errors?.['required']">required</div>
+
+                     </div>
+
+                  </div>
+              </div>
+              <div class="row mt-3">
+                  <div class="col-md-6"><label>User Name</label><input type="text" class="form-control" placeholder="user name" value="" formControlName="username">
+                    <div class="text-danger" *ngIf="Form.controls['username'].invalid && (Form.controls['username'].dirty || Form.controls['username'].touched)">
+                      <div *ngIf="Form.controls['username'].errors?.['required']">required</div>
+
+                     </div>
+                    </div>
+                  <div class="col-md-6"><label>Password</label><input type="password" class="form-control" value="" placeholder="password" formControlName="userpass">
+                    <div class="text-danger" *ngIf="Form.controls['userpass'].invalid && (Form.controls['userpass'].dirty || Form.controls['userpass'].touched)">
+                      <div *ngIf="Form.controls['userpass'].errors?.['required']">required</div>
+
+                     </div>
+                    </div>
+              </div>
+              <div class="row mt-3">
+                <div class="col-md-6" >
+                  <label>IsAdmin</label><select class="form-select" formControlName="user_IsAdmin">
+                    <option value="" disabled selected hidden>IsAdmin</option>
+                    <option>yes</option>
+                    <option>no</option>
+                    <option>none</option>
+                    </select>
+                    <div class="text-danger" *ngIf="Form.controls['user_IsAdmin'].invalid && (Form.controls['user_IsAdmin'].dirty || Form.controls['user_IsAdmin'].touched)">
+                      <div *ngIf="Form.controls['user_IsAdmin'].errors?.['required']">required</div>
+
+                     </div>
+                </div>
+                <div class="col-md-6"><label>User Type</label><select class="form-select" formControlName="type">
+                  <option value="" disabled selected hidden>User type</option>
+                  <option>Admin</option>
+                  <option>User</option>
+                  <option>none</option>
+                  </select>
+                  <div class="text-danger" *ngIf="Form.controls['type'].invalid && (Form.controls['type'].dirty || Form.controls['type'].touched)">
+                    <div *ngIf="Form.controls['type'].errors?.['required']">required</div>
+
+                   </div>
+                </div>
+            </div>
+            <div class="row mt-3">
+              <div class="col-md-6"><label>User Status</label><input type="text" class="form-control" placeholder="user status" value="" formControlName="user_status">
+                <div class="text-danger" *ngIf="Form.controls['user_status'].invalid && (Form.controls['user_status'].dirty || Form.controls['user_status'].touched)">
+                  <div *ngIf="Form.controls['user_status'].errors?.['required']">required</div>
+
+                 </div>
+                </div>
+              <div class="col-md-6"><label>User Role</label><input type="text" class="form-control" value="" placeholder="user role" formControlName="user_role">
+                <div class="text-danger" *ngIf="Form.controls['user_role'].invalid && (Form.controls['user_role'].dirty || Form.controls['user_role'].touched)">
+                  <div *ngIf="Form.controls['user_role'].errors?.['required']">required</div>
+
+                 </div>
+                </div>
+          </div>
+              <div class="mt-2 text-center">
+                <button class="btn btn-primary profile-button" type="button"  (click)="SaveUser()">Save Profile</button>
+              </div>
+            </form>
+          </div>
+
+
+      </div>
+  </div>
+
+</div>
+</body>

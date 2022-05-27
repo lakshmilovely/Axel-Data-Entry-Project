@@ -1,0 +1,15 @@
+.mud{
+  background-image: url('https://png.pngtree.com/thumb_back/fw800/background/20190221/ourmid/pngtree-technology-lines-business-blue-technology-image_22955.jpg');
+  background-size: cover;
+  height: 599px;
+}
+.dropdown-menu{
+  background-color: rgb(2, 20, 47)
+}
+.navbar{
+  background-image: url('https://png.pngtree.com/thumb_back/fw800/background/20190221/ourmid/pngtree-technology-lines-business-blue-technology-image_22955.jpg')
+}
+.dropdown-item{
+  color: aliceblue;
+}
+

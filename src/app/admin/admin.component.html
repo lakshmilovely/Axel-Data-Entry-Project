@@ -1,0 +1,50 @@
+<body class="mud">
+
+ <nav class="navbar navbar-expand-lg navbar-dark bg-primary" >
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">AXEL ONE</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active">Home</a>
+        </li>
+        <li class="nav-item dropdown"*ngIf="vary!='user'" >
+          <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Admin
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item"routerLink="/admin/user-list">View User</a></li>
+            <li><a class="dropdown-item"routerLink="/admin/user-create">Add User</a></li>
+            <li><a class="dropdown-item" routerLink="/admin/roles">View Role</a></li>
+            <li><a class="dropdown-item"routerLink="/admin/add-role">Add Role</a></li>
+            <li><a class="dropdown-item" routerLink="/admin/edit-profile">Edit Profile</a></li>
+          </ul>
+        </li>
+      <li class="nav-item">
+          <a class="nav-link active"  routerLink="/admin/edit-profile">Edit-Profile</a>
+     </li>
+
+    <li class="nav-item avatar active" style="margin-left:750px" >
+        <a><img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-2.webp" alt="" class="img-fluid rounded-circle z-depth-0 " height="40px" width="40px"></a>
+        </li>
+        <li class="nav-item dropdown" >
+          <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="nav-link active" href="#" (click)="logout()">logout</a></li>
+            </ul>
+            </li>
+          </ul>
+
+
+
+  </div>
+  </div>
+</nav>
+</body>
+
+

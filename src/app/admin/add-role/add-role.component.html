@@ -1,0 +1,96 @@
+<body
+  style=
+    "background-image:
+    url('https://png.pngtree.com/thumb_back/fw800/background/20190221/ourmid/pngtree-technology-lines-business-blue-technology-image_22955.jpg' )">
+
+<div class="container">
+  <div class="row">
+<div class="col-lg-12">
+          <div class="card">
+              <div class="face front-face">
+                  <img src="https://th.bing.com/th/id/R.97d72b534883565bf70d0565272c7cd1?rik=Qjf4yJC64%2fdZIQ&riu=http%3a%2f%2fsiemoservice.com%2fsiemo-images%2fteam-siemo-service.png&ehk=UJpv3ng5z1v588kmye1NcwFe5eACbdmmnoTnSS%2bNje8%3d&risl=&pid=ImgRaw&r=0"
+                      alt="" class="profile">
+                  <div class="pt-3 text-uppercase name">
+                    add role
+                  </div>
+
+                </div>
+              <div class="face back-face">
+                <form [formGroup]="addrole" (ngSubmit)="SaveRoles()">
+
+
+                    <div class="col-md-10">
+                    <div class="mb-2">
+                    <label>roleId</label>
+                    <input type="text" placeholder="id" formControlName="roleid">
+                    <div class="text-danger" *ngIf="addrole.controls['roleid'].invalid && (addrole.controls['roleid'].dirty || addrole.controls['roleid'].touched)">
+                      <div *ngIf="addrole.controls['roleid'].errors?.['required']">required</div>
+
+                     </div>
+                  </div>
+                     </div>
+
+                    <div class="col-md-10">
+                     <div class="mb-2">
+                      <label>role name</label>
+                      <input type="text" placeholder="role name" formControlName="rolename">
+                      <div class="text-danger" *ngIf="addrole.controls['rolename'].invalid && (addrole.controls['rolename'].dirty || addrole.controls['rolename'].touched)">
+                        <div *ngIf="addrole.controls['rolename'].errors?.['required']">required</div>
+                      </div>
+                      </div>
+                       </div>
+                      <div class="col-md-10">
+                        <div class="mb-2">
+                        <label>role type</label>
+                        <select class="form-select"formControlName="roletype">
+                          <option value="" disabled selected hidden>Role type</option>
+                        <option>Admin</option>
+                        <option>Front End</option>
+                        <option>Both</option>
+                        </select>
+                        <div class="text-danger" *ngIf="addrole.controls['roletype'].invalid && (addrole.controls['roletype'].dirty || addrole.controls['roletype'].touched)">
+                          <div *ngIf="addrole.controls['roletype'].errors?.['required']">required</div>
+
+                         </div>
+                      </div>
+                      </div>
+                        <div class="col-md-10">
+                          <div class="mb-2">
+                          <label>Role Status</label>
+                          <select class="form-select"formControlName="rolestatus">
+                            <option value="" disabled selected hidden>Role Status</option>
+                          <option>Y</option>
+                          <option>D</option>
+                          </select>
+                          <div class="text-danger" *ngIf="addrole.controls['rolestatus'].invalid && (addrole.controls['rolestatus'].dirty || addrole.controls['rolestatus'].touched)">
+                            <div *ngIf="addrole.controls['rolestatus'].errors?.['required']">required</div>
+
+                           </div>
+                          </div>
+                        </div>
+                        <div class="col-md-10">
+                          <div class="mb-2">
+                           <label>Role Unique Id</label>
+                           <input type="text" placeholder="role name" formControlName="roleuniqueid">
+                           <div class="text-danger" *ngIf="addrole.controls['roleuniqueid'].invalid && (addrole.controls['roleuniqueid'].dirty || addrole.controls['roleuniqueid'].touched)">
+                            <div *ngIf="addrole.controls['roleuniqueid'].errors?.['required']">required</div>
+
+                           </div>
+                           </div>
+                            </div>
+                          <div>
+                            <div class="mb-2">
+                          <button type="button"class="btn btn-success" (click)="SaveRoles()"> save role</button>
+                          <button type="button" style="margin-left:20px" class="btn btn-primary" routerlink="/login"> cancel</button>
+                        </div>
+                      </div>
+                    </form>
+
+                  </div>
+
+              </div>
+          </div>
+      </div>
+  </div>
+
+</body>
